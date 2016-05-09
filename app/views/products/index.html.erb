@@ -1,8 +1,11 @@
   <div class="row"><h1>LOOK BOOK</h1></div>
   <div class="row">
-  <%@products.each do |p|%>
-    
+
     <div class="col s12 m3">
+  <%@products.each do |p|%>
+
+    <%if (p.id+1)%4==0 %>
+    
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <a class="modal-trigger productimage" data-id="<%=p.url%>" href="#modal1"><img class="" src="<%=p.url%>"></a>
@@ -19,9 +22,84 @@
           <p><%=p.description%></p>
         </div>
       </div>
+      <%end%>
+  <%end%>
     </div>
 
+    <div class="col s12 m3">
+  <%@products.each do |p|%>
+
+    <%if (p.id+2)%4==0 %>
+    
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a class="modal-trigger productimage" data-id="<%=p.url%>" href="#modal1"><img class="" src="<%=p.url%>"></a>
+        </div>
+        <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">info_outline</i></span>
+          <p>
+            <a class="btn indigo disabled" href="#">Rs. <%=p.price%></a>
+            <a class="waves-effect waves-light btn indigo modal-trigger" href="#modalbuy">Buy Now</a>
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">close</i></span>
+          <p><%=p.description%></p>
+        </div>
+      </div>
+      <%end%>
   <%end%>
+    </div>
+
+    <div class="col s12 m3">
+  <%@products.each do |p|%>
+
+    <%if (p.id+3)%4==0 %>
+    
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a class="modal-trigger productimage" data-id="<%=p.url%>" href="#modal1"><img class="" src="<%=p.url%>"></a>
+        </div>
+        <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">info_outline</i></span>
+          <p>
+            <a class="btn indigo disabled" href="#">Rs. <%=p.price%></a>
+            <a class="waves-effect waves-light btn indigo modal-trigger" href="#modalbuy">Buy Now</a>
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">close</i></span>
+          <p><%=p.description%></p>
+        </div>
+      </div>
+      <%end%>
+  <%end%>
+    </div>
+
+    <div class="col s12 m3">
+  <%@products.each do |p|%>
+
+    <%if (p.id)%4==0 %>
+    
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a class="modal-trigger productimage" data-id="<%=p.url%>" href="#modal1"><img class="" src="<%=p.url%>"></a>
+        </div>
+        <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">info_outline</i></span>
+          <p>
+            <a class="btn indigo disabled" href="#">Rs. <%=p.price%></a>
+            <a class="waves-effect waves-light btn indigo modal-trigger" href="#modalbuy">Buy Now</a>
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">close</i></span>
+          <p><%=p.description%></p>
+        </div>
+      </div>
+      <%end%>
+  <%end%>
+    </div>
 
   </div>
 
