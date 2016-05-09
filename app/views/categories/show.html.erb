@@ -1,0 +1,59 @@
+<!-- Slider -->
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="<%= @category.image %>"> <!-- random image -->
+        <div class="caption left-align">
+          <h3><%= @category.name.capitalize %></h3>
+          <h5 class="light grey-text text-lighten-3"><%= @category.desc %></h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+  <%@products.each do |p|%>
+    
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <a class="modal-trigger productimage" data-id="<%=p.url%>" href="#modal1"><img class="" src="<%=p.url%>"></a>
+        </div>
+        <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">info_outline</i></span>
+          <p>
+            <a class="btn indigo disabled" href="#">Rs. <%=p.price%></a>
+            <a class="waves-effect waves-light btn indigo modal-trigger" href="#modalbuy">Buy Now</a>
+          </p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=p.name.capitalize%><i class="material-icons right">close</i></span>
+          <p><%=p.description%></p>
+        </div>
+      </div>
+    </div>
+
+  <%end%>
+
+  </div>
+
+      <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer" style="background: none;">
+      <div class="modal-content">
+        <p id="product">A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red red btn ">CLOSE</a>
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modalbuy" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h4>How To Buy</h4>
+        <p>Send a text to Whatsapp number 9999999999 with product code.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green indigo btn">Done</a>
+      </div>
+    </div>
