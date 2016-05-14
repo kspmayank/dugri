@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  get 'welcome/admin'
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :products
 
